@@ -187,4 +187,4 @@ For questions about this research project, please refer to the course instructor
 
 ---
 
-**Note**: This repository is part of a research task exploring LLM capabilities in sports data analysis. The focus is on understanding how well Large Language Models can process and analyze complex sports statistics through natural language queries. 
+**Note**: This repository is part of a research task exploring LLM capabilities in sports data analysis. The focus is on understanding how well Large Language Models can process and analyze complex sports statistics through natural language queries.
