@@ -64,6 +64,19 @@ Task_05_Descriptive_Stats/
 8. **2023 power-play performance**
 9. **Home venue effects during bio-bubble seasons**
 
+### D. Team Performance Metrics (New)
+10. **Average runs scored and conceded per match; differential by team** (question_10.py)
+11. **Correlation between first-innings total and probability of winning** (question_11.py)
+12. **Highest overall scoring season (avg total runs/match) and factors (extras proxy)** (question_12.py)
+
+### E. Advanced & Metric-Driven (New)
+13. **Player Impact Score** = (runs + wickets)/matches × (team win% with player / team overall win%) — top 5 (question_13.py)
+14. **Most improved in 2022 (rolling 5-match): batsman and bowler; definition of improvement included** (question_14.py)
+
+### F. Coach-Level Strategic Scenario (New)
+15. **Two extra wins next season: batting vs bowling focus; single ‘game-changer’ player suggestion** (question_15.py)
+16. **Simple logistic regression to predict win from venue, first-innings score, opponent strength (toss omitted due to missing data)** (question_16.py)
+
 ## Key Findings
 
 ### Python Analysis Results
