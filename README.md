@@ -29,15 +29,22 @@ The analysis uses ball-by-ball IPL match data containing:
 Task_05_Descriptive_Stats/
 ├── README.md                           # This file
 ├── comparison_results.md               # Detailed comparison of Python vs ChatGPT results
-├── all_questions_summary.py           # Comprehensive analysis script
-├── question_1.py                      # Matches per season analysis
-├── question_2_fixed.py                # Team win-loss records
-├── question_4.py                      # Top run-scorers analysis
-├── question_5.py                      # Top wicket-takers analysis
-├── question_6.py                      # Highest strike rate analysis
-├── question_7.py                      # Head-to-head records
-├── question_8_fixed.py                # 2023 power-play performance
-└── question_9.py                      # Home venue effects (2020-2021)
+├── all_questions_summary.py            # Comprehensive analysis script
+├── question_1.py                       # Matches per season analysis
+├── question_2_fixed.py                 # Team win-loss records
+├── question_4.py                       # Top run-scorers analysis
+├── question_5.py                       # Top wicket-takers analysis
+├── question_6.py                       # Highest strike rate analysis
+├── question_7.py                       # Head-to-head records
+├── question_8_fixed.py                 # 2023 power-play performance
+├── question_9.py                       # Home venue effects (2020-2021)
+├── question_10.py                      # Team avg scored/conceded and differentials
+├── question_11.py                      # 1st-innings total vs win probability (correlation)
+├── question_12.py                      # Highest scoring season + extras proxy
+├── question_13.py                      # Player impact score (global ranking)
+├── question_14.py                      # 2022 most improved (rolling 5-match)
+├── question_15.py                      # Coach recommendation & game-changer
+└── question_16.py                      # Logistic regression predictor strength
 ```
 
 ## Key Questions Analyzed
@@ -92,6 +99,15 @@ python question_6.py      # Highest strike rate
 python question_7.py      # Head-to-head records
 python question_8_fixed.py # 2023 power-play
 python question_9.py      # Venue effects
+
+# Advanced analyses
+python question_10.py     # Team avg scored/conceded and differential
+python question_11.py     # 1st-innings total vs win probability
+python question_12.py     # Highest scoring season + extras proxy
+python question_13.py     # Player impact score (top 5)
+python question_14.py     # 2022 most improved (rolling 5)
+python question_15.py     # Coach strategy & game-changer
+python question_16.py     # Logistic regression predictors
 ```
 
 ### Data Requirements
@@ -188,3 +204,34 @@ For questions about this research project, please refer to the course instructor
 ---
 
 **Note**: This repository is part of a research task exploring LLM capabilities in sports data analysis. The focus is on understanding how well Large Language Models can process and analyze complex sports statistics through natural language queries.
+
+## Additional Analyses (Q10–Q16)
+
+These scripts extend the analysis with advanced, metric-driven, and strategic questions. Summaries below are based on the current dataset and code logic.
+
+- Q10: Team average runs scored/conceded per match and differential
+  - Largest positive differential: Gujarat Titans (~+8.18 runs/match). Chennai Super Kings and Mumbai Indians also positive.
+
+- Q11: Correlation between first-innings total and probability of winning
+  - Win rate rises with higher first-innings bins (e.g., >200 ≈ 94% win). Pearson correlation ≈ 0.322.
+
+- Q12: Highest overall scoring season (avg total runs/match) and factors
+  - Highest: 2023 (~330.1 runs/match). Extras/match among top seasons elevated, suggesting batting-friendly conditions and/or discipline/rule effects.
+
+- Q13: Player impact score
+  - Definition: (runs + wickets) / matches × (team win% with player / team overall win%).
+  - Example top 5: CA Lynn, AJ Finch, S Dhawan, KL Rahul, AM Rahane.
+
+- Q14: Most improved (2022) with rolling 5-match windows
+  - Batsman example: RD Gaikwad (≈ +25.5 runs/match).
+  - Bowler example: DR Sams (≈ −20.9 runs conceded/match).
+  - Improvement defined as last − first (batting runs rolling mean); first − last (bowling runs conceded rolling mean).
+
+- Q15: Coach strategy and game-changer
+  - Win% increases with net run differential (runs scored − conceded). Recommendation: improve batting totals and suppress opponent scoring.
+  - Suggested game-changer example: S Dhawan (high base output; strong team win% when appearing).
+
+- Q16: Logistic regression (venue, first_runs, opponent strength)
+  - Test AUC ≈ 0.572. Strongest numeric predictors by |coef|: opponent strength, chasing; first_runs smaller after one-hot venue encoding.
+
+Re-run locally with your `match_data.csv` to refresh these summaries.
