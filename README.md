@@ -216,8 +216,6 @@ For questions about this research project, please refer to the course instructor
 
 ---
 
-**Note**: This repository is part of a research task exploring LLM capabilities in sports data analysis. The focus is on understanding how well Large Language Models can process and analyze complex sports statistics through natural language queries.
-
 ## Additional Analyses (Q10–Q16)
 
 These scripts extend the analysis with advanced, metric-driven, and strategic questions. Summaries below are based on the current dataset and code logic.
@@ -247,4 +245,4 @@ These scripts extend the analysis with advanced, metric-driven, and strategic qu
 - Q16: Logistic regression (venue, first_runs, opponent strength)
   - Test AUC ≈ 0.572. Strongest numeric predictors by |coef|: opponent strength, chasing; first_runs smaller after one-hot venue encoding.
 
-Re-run locally with your `match_data.csv` to refresh these summaries.
+**Note**: This repository is part of a research task exploring LLM capabilities in sports data analysis. The focus is on understanding how well Large Language Models can process and analyze complex sports statistics through natural language queries.
